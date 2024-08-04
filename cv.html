@@ -17,173 +17,259 @@
 </head>
 
 <body class="app">
-    <!-- [El código del sidebar y la navegación superior permanece igual] -->
-
-    <section class="container py-3 mt-3">
-        <div class="contenedor m-auto">
-            <h2>Currículum Vitae</h2>
-            <hr>
-            <form id="registro-form">
-                <!-- Formación Académica -->
-                <h4 class="mt-4">Formación Académica Principal</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="nivel-educativo-principal" class="form-label">Nivel Educativo</label>
-                        <select class="form-select" id="nivel-educativo-principal" required>
-                            <option value="">Selecciona tu nivel educativo</option>
-                            <option value="primaria">Primaria</option>
-                            <option value="secundaria">Secundaria</option>
-                            <option value="tecnico">Técnico</option>
-                            <option value="terciario">Terciario</option>
-                            <option value="universitario">Universitario</option>
-                            <option value="postgrado">Postgrado</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="titulo-principal" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="titulo-principal">
+    <!-- [Sidebar y la navegación superior] -->
+    <div class="sidebar">
+        <div class="sidebar-inner">
+            <div class="sidebar-logo">
+                <div class="d-flex align-items-center flex-nowrap">
+                    <a class="sidebar-link text-decoration-none" href="index.html">
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class="logo-sm">
+                                <div class="logo d-flex align-items-center justify-content-center">
+                                    <img src="assets/img/sello_ico.png" alt="">
+                                </div>
+                            </div>
+                            <div class="logo-text d-flex align-items-center justify-content-center">
+                                Reclutar
+                            </div>
+                        </div>
+                    </a>
+                    <div class="">
+                        <div class="mobile-toggle sidebar-toggle">
+                            <a href="#" class="text-decoration-none">
+                                <i class="far fa-times-circle"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-                <h4 class="mt-4">Formación Académica Complementaria</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="nivel-educativo-complementario" class="form-label">Nivel Educativo</label>
-                        <select class="form-select" id="nivel-educativo-complementario">
-                            <option value="">Selecciona tu nivel educativo</option>
-                            <option value="primaria">Primaria</option>
-                            <option value="secundaria">Secundaria</option>
-                            <option value="tecnico">Técnico</option>
-                            <option value="terciario">Terciario</option>
-                            <option value="universitario">Universitario</option>
-                            <option value="postgrado">Postgrado</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="titulo-complementario" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="titulo-complementario">
-                    </div>
-                </div>
-                
-                <hr>
-
-                <!-- Experiencia Laboral -->
-                <h4 class="mt-4">Experiencia Laboral Principal</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="empresa-principal" class="form-label required-field">Empresa</label>
-                        <input type="text" class="form-control" id="empresa-principal" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="puesto-principal" class="form-label required-field">Puesto</label>
-                        <input type="text" class="form-control" id="puesto-principal" required>
-                    </div>
-                </div>
-
-                <h4 class="mt-4">Experiencia Laboral Secundaria</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="empresa-secundaria" class="form-label">Empresa</label>
-                        <input type="text" class="form-control" id="empresa-secundaria">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="puesto-secundario" class="form-label">Puesto</label>
-                        <input type="text" class="form-control" id="puesto-secundario">
-                    </div>
-                </div>
-
-                <hr>
-
-                <!-- Cursos/Seminarios/Congresos -->
-                <h4 class="mt-4">Formación Adicional 1</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="tipo-formacion-1" class="form-label">Tipo</label>
-                        <select class="form-select" id="tipo-formacion-1">
-                            <option value="">Seleccione el tipo</option>
-                            <option value="curso">Curso</option>
-                            <option value="seminario">Seminario</option>
-                            <option value="congreso">Congreso</option>
-                            <option value="presentacion">Presentación</option>
-                            <option value="investigacion">Investigación</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="nombre-formacion-1" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre-formacion-1">
-                    </div>
-                </div>
-
-                <h4 class="mt-4">Formación Adicional 2</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="tipo-formacion-2" class="form-label">Tipo</label>
-                        <select class="form-select" id="tipo-formacion-2">
-                            <option value="">Seleccione el tipo</option>
-                            <option value="curso">Curso</option>
-                            <option value="seminario">Seminario</option>
-                            <option value="congreso">Congreso</option>
-                            <option value="presentacion">Presentación</option>
-                            <option value="investigacion">Investigación</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="nombre-formacion-2" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre-formacion-2">
-                    </div>
-                </div>
-
-                <hr>
-
-                <!-- Idiomas -->
-                <h4 class="mt-4">Idiomas</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="idioma" class="form-label required-field">Idioma</label>
-                        <input type="text" class="form-control" id="idioma" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="nivel-idioma" class="form-label required-field">Nivel</label>
-                        <select class="form-select" id="nivel-idioma" required>
-                            <option value="">Seleccione un nivel</option>
-                            <option value="basico">Básico</option>
-                            <option value="intermedio">Intermedio</option>
-                            <option value="avanzado">Avanzado</option>
-                            <option value="nativo">Nativo</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Informática -->
-                <h4 class="mt-4">Conocimientos Informáticos</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="categoria-informatica" class="form-label">Categoría</label>
-                        <select class="form-select" id="categoria-informatica">
-                            <option value="">Seleccione una categoría</option>
-                            <option value="programacion">Programación</option>
-                            <option value="ofimatica">Ofimática</option>
-                            <option value="diseno">Diseño Gráfico</option>
-                            <option value="basesdedatos">Bases de Datos</option>
-                            <option value="redes">Redes</option>
-                            <option value="sistemas">Sistemas Operativos</option>
-                            <option value="otros">Otros</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="detalles-informatica" class="form-label">Detalles/Comentarios</label>
-                        <textarea class="form-control" id="detalles-informatica" rows="3"></textarea>
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-md-12 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-gob px-4">Guardar CV</button>
-                    </div>
-                </div>
-            </form>
+            </div>
+            <!-- Inicio del menu lateral -->
+            <ul class="sidebar-menu scrollable position-relative pt-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" href="micuenta.html">
+                        <span class="icon-holder">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <span class="title">Datos Personales</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" href="cv.html">
+                        <span class="icon-holder">
+                            <i class="fas fa-briefcase"></i>
+                        </span>
+                        <span class="title">CV</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" href="examenes.html">
+                        <span class="icon-holder">
+                            <i class="far fa-folder-open"></i>
+                        </span>
+                        <span class="title">Examenes</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- Fin del menu lateral -->
         </div>
-    </section>
+    </div>
+
+    <!-- Menú Superior -->
+    <div class="container-wide">
+        <nav class="navbar navbar-expand navbar-light bg-gob">
+            <ul class="navbar-nav me-auto ml">
+                <li class="nav-item active">
+                    <a id="sidebar-toggle" class="sidebar-toggle nav-link" href="#">
+                        <i class="fas fa-bars mx-2"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link mx-3" href="index.html">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="container py-3 mt-3">
+            <div class="contenedor m-auto">
+                <h2>Currículum Vitae</h2>
+                <hr>
+                <form id="registro-form">
+                    <!-- Formación Académica -->
+                    <h4 class="mt-4">Formación Académica Principal</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nivel-educativo-principal" class="form-label">Nivel Educativo</label>
+                            <select class="form-select" id="nivel-educativo-principal" required>
+                                <option value="">Selecciona tu nivel educativo</option>
+                                <option value="primaria">Primaria</option>
+                                <option value="secundaria">Secundaria</option>
+                                <option value="tecnico">Técnico</option>
+                                <option value="terciario">Terciario</option>
+                                <option value="universitario">Universitario</option>
+                                <option value="postgrado">Postgrado</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="titulo-principal" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="titulo-principal">
+                        </div>
+                    </div>
+
+                    <h4 class="mt-4">Formación Académica Complementaria</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nivel-educativo-complementario" class="form-label">Nivel Educativo</label>
+                            <select class="form-select" id="nivel-educativo-complementario">
+                                <option value="">Selecciona tu nivel educativo</option>
+                                <option value="primaria">Primaria</option>
+                                <option value="secundaria">Secundaria</option>
+                                <option value="tecnico">Técnico</option>
+                                <option value="terciario">Terciario</option>
+                                <option value="universitario">Universitario</option>
+                                <option value="postgrado">Postgrado</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="titulo-complementario" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="titulo-complementario">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Experiencia Laboral -->
+                    <h4 class="mt-4">Experiencia Laboral Principal</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="empresa-principal" class="form-label required-field">Empresa</label>
+                            <input type="text" class="form-control" id="empresa-principal" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="puesto-principal" class="form-label required-field">Puesto</label>
+                            <input type="text" class="form-control" id="puesto-principal" required>
+                        </div>
+                    </div>
+
+                    <h4 class="mt-4">Experiencia Laboral Adicional</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="empresa-secundaria" class="form-label">Empresa</label>
+                            <input type="text" class="form-control" id="empresa-secundaria">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="puesto-secundario" class="form-label">Puesto</label>
+                            <input type="text" class="form-control" id="puesto-secundario">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Cursos/Seminarios/Congresos Destacado -->
+                    <h4 class="mt-4">Información Adicional</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="tipo-formacion-1" class="form-label">Adicional Destacado</label>
+                            <select class="form-select" id="tipo-formacion-1">
+                                <option value="">Seleccione el tipo</option>
+                                <option value="curso">Curso</option>
+                                <option value="seminario">Seminario</option>
+                                <option value="congreso">Congreso</option>
+                                <option value="presentacion">Presentación</option>
+                                <option value="investigacion">Investigación</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre-formacion-1" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre-formacion-1">
+                        </div>
+                    </div>
+
+                    <!-- Cursos/Seminarios/Congresos Complementaria -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="tipo-formacion-2" class="form-label">Adicional Complementaria</label>
+                            <select class="form-select" id="tipo-formacion-2">
+                                <option value="">Seleccione el tipo</option>
+                                <option value="curso">Curso</option>
+                                <option value="seminario">Seminario</option>
+                                <option value="congreso">Congreso</option>
+                                <option value="presentacion">Presentación</option>
+                                <option value="investigacion">Investigación</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre-formacion-2" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre-formacion-2">
+                        </div>
+                    </div>
+
+                    <!-- Idiomas -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="idioma" class="form-label">Idioma</label>
+                            <select class="form-select" id="categoria-informatica">
+                                <option value="">Seleccione un idioma</option>
+                                <option value="ingles">Inglés</option>
+                                <option value="portugues">Portugués</option>
+                                <option value="frances">Francés</option>
+                                <option value="italiano">Italiano</option>
+                                <option value="aleman">Alemán</option>
+                                <option value="chino">Chino (Mandarín)</option>
+                                <option value="japones">Japonés</option>
+                                <option value="coreano">Coreano</option>
+                                <option value="arabe">Árabe</option>
+                                <option value="ruso">Ruso</option>
+                                <option value="hindi">Hindi</option>
+                                <option value="guarani">Guaraní</option>
+                                <option value="quechua">Quechua</option>
+                                <option value="otros">Otro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nivel-idioma" class="form-label required-field">Nivel</label>
+                            <select class="form-select" id="nivel-idioma" required>
+                                <option value="">Seleccione un nivel</option>
+                                <option value="basico">Básico</option>
+                                <option value="intermedio">Intermedio</option>
+                                <option value="avanzado">Avanzado</option>
+                                <option value="nativo">Nativo</option>
+                            </select>
+                        </div>
+                    </div>                    
+
+                    <!-- Informática -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="categoria-informatica" class="form-label">Informática</label>
+                            <select class="form-select" id="categoria-informatica">
+                                <option value="">Seleccione una categoría</option>
+                                <option value="programacion">Programación</option>
+                                <option value="ofimatica">Ofimática</option>
+                                <option value="diseno">Diseño Gráfico</option>
+                                <option value="basesdedatos">Bases de Datos</option>
+                                <option value="redes">Redes</option>
+                                <option value="sistemas">Sistemas Operativos</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="detalles-informatica" class="form-label">Detalles sobre informatica</label>
+                            <textarea class="form-control" id="detalles-informatica" rows="2"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-gob px-4">Guardar CV</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/perfect-scrollbar.min.js"></script>

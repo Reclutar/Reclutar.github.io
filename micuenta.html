@@ -18,6 +18,7 @@
 </head>
 
 <body class="app">
+    <!-- [Sidebar y la navegación superior] -->
     <div class="sidebar">
         <div class="sidebar-inner">
             <div class="sidebar-logo">
@@ -43,7 +44,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Inicio del menu lateral -->
             <ul class="sidebar-menu scrollable position-relative pt-3">
                 <li class="nav-item dropdown">
@@ -69,10 +69,9 @@
                         </span>
                         <span class="title">Examenes</span>
                     </a>
-                </li>                
+                </li>
             </ul>
             <!-- Fin del menu lateral -->
-
         </div>
     </div>
 
@@ -87,83 +86,83 @@
                 </li>
             </ul>
 
-            <!-- <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="micuenta.html">Mi Cuenta</a>
+                    <a class="nav-link mx-3" href="index.html">Cerrar Sesión</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-3" href="acceder.html">Acceder</a>
-                </li>
-            </ul> -->
+            </ul>
         </nav>
 
         <section class="container py-3 mt-3">
-        <div class="contenedor m-auto">
-            <h2>Datos Personales</h2>
-            <form id="registro-form">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="nombre" class="form-label required-field">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" value="Juan" disabled>
+            <div class="contenedor m-auto">
+                <h2>Datos Personales</h2>
+                <form id="registro-form">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre" class="form-label required-field">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" value="Juan" disabled>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="apellido" class="form-label required-field">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" value="Pérez" disabled>
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="apellido" class="form-label required-field">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" value="Pérez" disabled>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label required-field">Email</label>
+                            <input type="email" class="form-control" value="email@ejemplo.com" id="email" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="confirm-email" class="form-label required-field">Confirmar Email</label>
+                            <input type="email" class="form-control" id="confirm-email" value="email@ejemplo.com"
+                                required onpaste="return false;">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label required-field">Email</label>
-                        <input type="email" class="form-control" value="email@ejemplo.com" id="email" required>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cuil" class="form-label required-field">CUIL</label>
+                            <input type="number" class="form-control" value="20123456789" id="cuil" disabled>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nacionalidad" class="form-label required-field">Nacionalidad</label>
+                            <select class="form-select" id="nacionalidad" disabled>
+                                <option value="argentina">Argentina</option>
+                                <option value="otros">Otro</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="confirm-email" class="form-label required-field">Confirmar Email</label>
-                        <input type="email" class="form-control" id="confirm-email" value="email@ejemplo.com" required onpaste="return false;">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nacimiento" class="form-label required-field">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="nacimiento" value="1980-06-17" disabled>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cud" class="form-label">Número de CUD</label>
+                            <input type="number" class="form-control" value="32150003215" id="cud">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="cuil" class="form-label required-field">CUIL</label>
-                        <input type="number" class="form-control" value="20123456789" id="cuil" disabled>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="direccion" class="form-label required-field">Dirección</label>
+                            <input type="text" class="form-control" id="direccion"
+                                value="Av. Pres. Roque Sáenz Peña 511" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="telefono" class="form-label required-field">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" value="(5411) 6065-2200" required>
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="nacionalidad" class="form-label required-field">Nacionalidad</label>
-                        <select class="form-select" id="nacionalidad" disabled>
-                            <option value="argentina">Argentina</option>
-                            <option value="otros">Otro</option>
-                        </select>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <!-- <a href="#" class="btn btn-secondary px-4 me-2">Volver</a> -->
+                            <button type="submit" class="btn btn-gob px-4">Editar</button>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="nacimiento" class="form-label required-field">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="nacimiento" value="1980-06-17" disabled>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cud" class="form-label">Número de CUD</label>
-                        <input type="number" class="form-control" value="32150003215" id="cud">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="direccion" class="form-label required-field">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" value="Av. Pres. Roque Sáenz Peña 511" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="telefono" class="form-label required-field">Teléfono</label>
-                        <input type="tel" class="form-control" id="telefono" value="(5411) 6065-2200" required>
-                    </div>
-                </div>
-                
-                <div class="row mt-4">
-                    <div class="col-md-12 d-flex justify-content-end">
-                        <!-- <a href="#" class="btn btn-secondary px-4 me-2">Volver</a> -->
-                        <button type="submit" class="btn btn-gob px-4">Editar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
+                </form>
+            </div>
+        </section>
+    </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/perfect-scrollbar.min.js"></script>
