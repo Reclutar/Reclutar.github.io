@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/next-sidebar.css" />
     <link rel="stylesheet" href="css/perfect-scrollbar.css" />
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -69,7 +68,7 @@
                         </span>
                         <span class="title">Examenes</span>
                     </a>
-                </li>                
+                </li>
             </ul>
             <!-- Fin del menu lateral -->
 
@@ -103,41 +102,16 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Turno del Examen</th>
+                            <th>Fecha</th>
+                            <th>Horario</th>
+                            <th>Exámen</th>
                             <th>Se Presentó</th>
                             <th>Resultado</th>
                             <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>15/08/2024</td>
-                            <td><span class="badge bg-success">Sí</span></td>
-                            <td><span class="badge bg-success">Aprobado</span></td>
-                            <td>                                
-                                <a href="assets/certificado.pdf" class="btn btn-sm btn-gob" target="_blank">
-                                    <i class="fas fa-download"></i> Certificado
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10/07/2024</td>
-                            <td><span class="badge bg-success">Sí</span></td>
-                            <td><span class="badge bg-danger">Desaprobado</span></td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>05/06/2024</td>
-                            <td><span class="badge bg-danger">No</span></td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>20/09/2024</td>
-                            <td><span class="badge bg-warning text-dark">Pendiente</span></td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
+                        <!-- Acá está el listado de historial -->
                     </tbody>
                 </table>
             </div>
@@ -149,6 +123,35 @@
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
             crossorigin="anonymous"></script>
         <script src="js/next-sidebar.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const turnos = [
+                    { fecha: '05/06/2024', horario: '10:00', examen: 'Nivel 2', sePresento: 'No', resultado: null, certificado: null },
+                    { fecha: '05/06/2024', horario: '13:00', examen: 'Nivel 3', sePresento: 'Sí', resultado: 'Desaprobado', certificado: null },
+                    { fecha: '10/07/2024', horario: '11:30', examen: 'Nivel 2', sePresento: 'Sí', resultado: 'Aprobado', certificado: 'assets/certificado.pdf' },
+                    { fecha: '15/08/2024', horario: '10:00', examen: 'Nivel 1', sePresento: 'Sí', resultado: 'Aprobado', certificado: 'assets/certificado.pdf' },
+                    { fecha: '20/09/2024', horario: '14:30', examen: 'Nivel 1', sePresento: 'Pendiente', resultado: null, certificado: null },
+                    { fecha: '20/09/2024', horario: '16:00', examen: 'Nivel 4', sePresento: 'Pendiente', resultado: null, certificado: null },
+                ];
+
+                const tableBody = document.querySelector('tbody');
+
+                turnos.forEach(turno => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${turno.fecha}</td>
+                        <td>${turno.horario}</td>
+                        <td>${turno.examen}</td>
+                        <td><span class="badge ${turno.sePresento === 'Sí' ? 'bg-success' : turno.sePresento === 'No' ? 'bg-danger' : 'bg-warning text-dark'}">${turno.sePresento}</span></td>
+                        <td><span class="badge ${turno.resultado === 'Aprobado' ? 'bg-success' : turno.resultado === 'Desaprobado' ? 'bg-danger' : ''}">${turno.resultado ?? '</span>-<span></span>'}</span></td>
+                        <td>
+                            ${turno.certificado ? `<a href="${turno.certificado}" class="btn btn-sm btn-gob" target="_blank"><i class="fas fa-download"></i> Certificado</a>` : '-'}
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            });
+        </script>
 </body>
 
 </html>
