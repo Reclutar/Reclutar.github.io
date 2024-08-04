@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://back.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico"
+        type="image/vnd.microsoft.icon">
+    <title>Historial - Reclutar</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/next-sidebar.css" />
+    <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="app">
+    <div class="sidebar">
+        <div class="sidebar-inner">
+            <div class="sidebar-logo">
+                <div class="d-flex align-items-center flex-nowrap">
+                    <a class="sidebar-link text-decoration-none" href="index.html">
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class="logo-sm">
+                                <div class="logo d-flex align-items-center justify-content-center">
+                                    <img src="assets/img/sello_ico.png" alt="">
+                                </div>
+                            </div>
+                            <div class="logo-text d-flex align-items-center justify-content-center">
+                                Reclutar
+                            </div>
+                        </div>
+                    </a>
+                    <div class="">
+                        <div class="mobile-toggle sidebar-toggle">
+                            <a href="#" class="text-decoration-none">
+                                <i class="far fa-times-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inicio del menu lateral -->
+            <ul class="sidebar-menu scrollable position-relative pt-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" href="micuenta.html">
+                        <span class="icon-holder">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <span class="title">Datos Personales</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" href="cv.html">
+                        <span class="icon-holder">
+                            <i class="fas fa-briefcase"></i>
+                        </span>
+                        <span class="title">CV</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link wave-effect" href="examenes.html">
+                        <span class="icon-holder">
+                            <i class="far fa-folder-open"></i>
+                        </span>
+                        <span class="title">Examenes</span>
+                    </a>
+                </li>                
+            </ul>
+            <!-- Fin del menu lateral -->
+
+        </div>
+    </div>
+
+    <!-- Menú Superior -->
+    <div class="container-wide">
+        <nav class="navbar navbar-expand navbar-light bg-gob">
+            <ul class="navbar-nav me-auto ml">
+                <li class="nav-item active">
+                    <a id="sidebar-toggle" class="sidebar-toggle nav-link" href="#">
+                        <i class="fas fa-bars mx-2"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="micuenta.html">Mi Cuenta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-3" href="acceder.html">Acceder</a>
+                </li>
+            </ul> -->
+        </nav>
+
+        <section class="container py-3 mt-3">
+            <div class="contenedor m-auto">
+                <h2>Historial de Exámenes</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Turno del Examen</th>
+                            <th>Se Presentó</th>
+                            <th>Resultado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15/08/2024</td>
+                            <td><span class="badge bg-success">Sí</span></td>
+                            <td><span class="badge bg-success">Aprobado</span></td>
+                            <td>                                
+                                <a href="assets/certificado.pdf" class="btn btn-sm btn-gob" target="_blank">
+                                    <i class="fas fa-download"></i> Certificado
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10/07/2024</td>
+                            <td><span class="badge bg-success">Sí</span></td>
+                            <td><span class="badge bg-danger">Desaprobado</span></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>05/06/2024</td>
+                            <td><span class="badge bg-danger">No</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>20/09/2024</td>
+                            <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/perfect-scrollbar.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+        <script src="js/next-sidebar.js"></script>
+</body>
+
+</html>

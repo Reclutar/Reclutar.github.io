@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+#presentacion {
+    background-color: #242c4f;
+    color: #fff;
+}
+
+#contactos, #manual, #faq {
+    color: #333;
+}
+
+#busquedas h2 {
+    color: #3e5a7e;
+}
+
+.contenedor {
+    max-width: 800px;
+}
+
+/* Quitar el color de una etiqueta <a> */
+a.no-hover {
+    text-decoration: none;
+    color: inherit; /* Mantener el color original */
+  }
+a.no-hover:hover {
+    text-decoration: none;
+    color: inherit; /* Mantener el color original al hacer hover */
+}
+
+#botones {
+    background-color: #f2f2f2;
+}
+
+h1, h6 {
+    font-family: 'Lora';
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #555;
+    color: #fff;
+}
+
+.card-body {
+    background-color: #fff;
+}
+
+.bg-gob {
+    background-color: #242c4f !important;
+    color: #fff !important;
+}
+
+.nav-link{
+    color: #fff;
+}
+.nav-link:hover{
+    color: #eab85f;
+}
+
+.btn-gob {
+    background-color: #242c4f !important;
+    color: #fff !important;
+}
+
+.bg-gob-overlay {
+    background: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url("../assets/img/background.jfif");
+    background-size: auto;
+    background-position: center;
+}
+
+.bg-gob-overlay p {
+    color: white; /* Color blanco para el texto */
+}
+
+.blanco {
+    color: white;
+}
