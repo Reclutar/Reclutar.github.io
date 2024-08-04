@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://back.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico"
+        type="image/vnd.microsoft.icon">
+    <title>Reserva de Turno - Reclutar</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.1/main.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.10.1/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gob">
+        <div class="container-fluid">
+            <img src="assets/img/sello_ico.png" width="35" alt="" class="mx-3">
+            <a class="navbar-brand" href="index.html">Reclutar.gob.ar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">Preguntas Frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactos">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="micuenta.html">Mi Cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="acceder.html">Acceder</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <h2 class="my-4">Reserva de Turno</h2>
+            <form id="filter-form" class="mb-4">
+                <div class="mb-3">
+                    <label for="examen" class="form-label">Selecciona el examen</label>
+                    <select class="form-select" id="examen">
+                        <option value="">Todos los exámenes</option>
+                        <option value="Nivel 1">Nivel 1</option>
+                        <option value="Nivel 2">Nivel 2</option>
+                        <option value="Nivel 3">Nivel 3</option>
+                        <option value="Nivel 4">Nivel 4</option>
+                    </select>
+                </div>
+            </form>
+    
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Exámen</th>
+                        <th>Día</th>
+                        <th>Fecha</th>
+                        <th>Horario</th>
+                        <th>Disponibilidad</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="turnos-table-body">
+                    <!-- Aquí se cargarán los turnos -->
+                </tbody>
+            </table>
+        </div>
+    
+        
+    
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const turnos = [
+                // Datos para todo el mes de agosto de 2024
+                { examen: 'Nivel 1', dia: 'Lunes', fecha: '2024-08-05', horario: '10:00', disponibilidad: 8 },
+                { examen: 'Nivel 1', dia: 'Martes', fecha: '2024-08-06', horario: '11:30', disponibilidad: 5 },
+                { examen: 'Nivel 1', dia: 'Miércoles', fecha: '2024-08-07', horario: '13:00', disponibilidad: 0 },
+                { examen: 'Nivel 1', dia: 'Jueves', fecha: '2024-08-08', horario: '14:30', disponibilidad: 10 },
+                { examen: 'Nivel 1', dia: 'Viernes', fecha: '2024-08-09', horario: '16:00', disponibilidad: 2 },
+                { examen: 'Nivel 1', dia: 'Lunes', fecha: '2024-08-12', horario: '10:00', disponibilidad: 7 },
+                { examen: 'Nivel 1', dia: 'Martes', fecha: '2024-08-13', horario: '11:30', disponibilidad: 1 },
+                { examen: 'Nivel 1', dia: 'Miércoles', fecha: '2024-08-14', horario: '13:00', disponibilidad: 4 },
+                { examen: 'Nivel 1', dia: 'Jueves', fecha: '2024-08-15', horario: '14:30', disponibilidad: 0 },
+                { examen: 'Nivel 1', dia: 'Viernes', fecha: '2024-08-16', horario: '16:00', disponibilidad: 5 },
+                // Nivel 2
+                { examen: 'Nivel 2', dia: 'Lunes', fecha: '2024-08-05', horario: '10:00', disponibilidad: 6 },
+                { examen: 'Nivel 2', dia: 'Martes', fecha: '2024-08-06', horario: '11:30', disponibilidad: 4 },
+                { examen: 'Nivel 2', dia: 'Miércoles', fecha: '2024-08-07', horario: '13:00', disponibilidad: 0 },
+                { examen: 'Nivel 2', dia: 'Jueves', fecha: '2024-08-08', horario: '14:30', disponibilidad: 10 },
+                { examen: 'Nivel 2', dia: 'Viernes', fecha: '2024-08-09', horario: '16:00', disponibilidad: 1 },
+                { examen: 'Nivel 2', dia: 'Lunes', fecha: '2024-08-12', horario: '10:00', disponibilidad: 3 },
+                { examen: 'Nivel 2', dia: 'Martes', fecha: '2024-08-13', horario: '11:30', disponibilidad: 0 },
+                { examen: 'Nivel 2', dia: 'Miércoles', fecha: '2024-08-14', horario: '13:00', disponibilidad: 7 },
+                { examen: 'Nivel 2', dia: 'Jueves', fecha: '2024-08-15', horario: '14:30', disponibilidad: 5 },
+                { examen: 'Nivel 2', dia: 'Viernes', fecha: '2024-08-16', horario: '16:00', disponibilidad: 8 },
+                // Nivel 3
+                { examen: 'Nivel 3', dia: 'Lunes', fecha: '2024-08-05', horario: '10:00', disponibilidad: 2 },
+                { examen: 'Nivel 3', dia: 'Martes', fecha: '2024-08-06', horario: '11:30', disponibilidad: 6 },
+                { examen: 'Nivel 3', dia: 'Miércoles', fecha: '2024-08-07', horario: '13:00', disponibilidad: 0 },
+                { examen: 'Nivel 3', dia: 'Jueves', fecha: '2024-08-08', horario: '14:30', disponibilidad: 9 },
+                { examen: 'Nivel 3', dia: 'Viernes', fecha: '2024-08-09', horario: '16:00', disponibilidad: 4 },
+                { examen: 'Nivel 3', dia: 'Lunes', fecha: '2024-08-12', horario: '10:00', disponibilidad: 3 },
+                { examen: 'Nivel 3', dia: 'Martes', fecha: '2024-08-13', horario: '11:30', disponibilidad: 5 },
+                { examen: 'Nivel 3', dia: 'Miércoles', fecha: '2024-08-14', horario: '13:00', disponibilidad: 8 },
+                { examen: 'Nivel 3', dia: 'Jueves', fecha: '2024-08-15', horario: '14:30', disponibilidad: 0 },
+                { examen: 'Nivel 3', dia: 'Viernes', fecha: '2024-08-16', horario: '16:00', disponibilidad: 7 },
+                // Nivel 4
+                { examen: 'Nivel 4', dia: 'Lunes', fecha: '2024-08-05', horario: '10:00', disponibilidad: 5 },
+                { examen: 'Nivel 4', dia: 'Martes', fecha: '2024-08-06', horario: '11:30', disponibilidad: 2 },
+                { examen: 'Nivel 4', dia: 'Miércoles', fecha: '2024-08-07', horario: '13:00', disponibilidad: 0 },
+                { examen: 'Nivel 4', dia: 'Jueves', fecha: '2024-08-08', horario: '14:30', disponibilidad: 10 },
+                { examen: 'Nivel 4', dia: 'Viernes', fecha: '2024-08-09', horario: '16:00', disponibilidad: 1 },
+                { examen: 'Nivel 4', dia: 'Lunes', fecha: '2024-08-12', horario: '10:00', disponibilidad: 4 },
+                { examen: 'Nivel 4', dia: 'Martes', fecha: '2024-08-13', horario: '11:30', disponibilidad: 0 },
+                { examen: 'Nivel 4', dia: 'Miércoles', fecha: '2024-08-14', horario: '13:00', disponibilidad: 9 },
+                { examen: 'Nivel 4', dia: 'Jueves', fecha: '2024-08-15', horario: '14:30', disponibilidad: 5 },
+                { examen: 'Nivel 4', dia: 'Viernes', fecha: '2024-08-16', horario: '16:00', disponibilidad: 3 },
+            ];
+
+            const tableBody = document.getElementById('turnos-table-body');
+            const examenSelect = document.getElementById('examen');
+
+            function renderTable(turnosFiltrados) {
+                tableBody.innerHTML = '';
+                turnosFiltrados.forEach(turno => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${turno.examen}</td>
+                        <td>${turno.dia}</td>
+                        <td>${turno.fecha}</td>
+                        <td>${turno.horario}</td>
+                        <td>${turno.disponibilidad}</td>
+                        <td>
+                            <button class="btn btn-gob" ${turno.disponibilidad === 0 ? 'disabled' : ''}>
+                                Reservar
+                            </button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            function filterTurnos() {
+                const examenValue = examenSelect.value;
+                const filteredTurnos = examenValue ? turnos.filter(turno => turno.examen === examenValue) : turnos;
+                renderTable(filteredTurnos);
+            }
+
+            examenSelect.addEventListener('change', filterTurnos);
+            filterTurnos();
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+    
+</body>
+
+</html>
