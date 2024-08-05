@@ -21,6 +21,12 @@ body {
     max-width: 800px;
 }
 
+/* Símbolo aclaratorio rojo */
+.required-field::after {
+    content: " *";
+    color: red;
+}
+
 /* Quitar el color de una etiqueta <a> */
 a.no-hover {
     text-decoration: none;
